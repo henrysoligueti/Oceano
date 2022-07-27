@@ -6,8 +6,8 @@ import Title from '../../components/Title';
 
 export default function Lista(){
     const [paises, setPaises] = useState<any[]>([]);
-    const [filtroNome, setFiltroNome] = useState<any>('');
-    
+    const [filtroNome, setFiltroNome] = useState<string>('');
+    const [buscar, setBuscar] = useState<string>('');    
 
     useEffect(() => {
         axios.get('https://restcountries.com/v3.1/all').then(res => {
@@ -16,12 +16,10 @@ export default function Lista(){
     },[]);
 
     const paisesFiltrados = (
-        filtroNome?
-            paises.filter(
-                (pais) => pais.name.common.toLowerCase().includes(filtroNome.toLowerCase())
-            )
-        :paises)
-    ;
+        buscar?
+            paises.filter((pais) => pais.name.common.toLowerCase().includes(buscar.toLowerCase()))            
+        :paises
+    );
 
     return(
         <>
@@ -32,15 +30,21 @@ export default function Lista(){
                             <Title text="Busca" />
 
                             <div className="form-control">
-                                <div className="d-flex">
-                                    <input
-                                        type="text"
-                                        value={filtroNome}
-                                        placeholder="Filtro por nome"
-                                        onChange={(e: { target: HTMLInputElement }) => setFiltroNome(e.target.value)}
-                                    />
-                                    <TbSearch />
-                                </div>
+                                <form onSubmit={(e) => (e.preventDefault(), setBuscar(filtroNome))}>
+                                    <div className="d-flex">
+                                        <input
+                                            type="text"
+                                            value={filtroNome}
+                                            placeholder="Filtro por nome"
+                                            onChange={
+                                                (e: { target: HTMLInputElement }) => setFiltroNome(e.target.value)
+                                            }
+                                        />
+                                        <button type="submit">
+                                            Buscar
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         <div>

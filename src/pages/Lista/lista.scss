@@ -57,15 +57,6 @@ body {
     background-color:transparent;
     position:relative;
 
-    svg {
-        position: absolute;
-        font-size: 20px;
-        top: calc(50% - 10px);
-        right: 30px;
-        color: #aaa;
-        pointer-events:none;
-    }
-
     input {
         width:100%;
         border:none;
@@ -81,13 +72,20 @@ body {
 
     button {
         border-radius: 30px;
-        margin-left: 20px;
-        padding: 10px 30px;
+        margin-left: 15px;
+        padding: 12px 30px;
         line-height: 1;
-        height: 44px;
+        height: 48px;
         border: none;
-        background-color:#13aaee;
+        background:linear-gradient(to right, #00249d, #011a6e, #00249d);
+        background-size:200%;
+        background-position:0%;
         color:#fff;
         font-weight:600;
+        transition:all ease .3s;
+
+        &:hover{
+            background-position:100%;
+        }            
     }
 }
