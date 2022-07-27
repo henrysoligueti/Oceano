@@ -1,0 +1,101 @@
+@import "~bootstrap/scss/bootstrap";
+                
+body {
+    background:#f1f2f6;
+}
+
+.container {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    width:100%;
+
+    table {        
+        border-collapse:separate;
+        border-spacing:0;
+        text-align:left;
+
+        thead {            
+            th {
+                padding:15px 30px;
+                background:#e2e5ec;
+                border-bottom:1px solid #eee;                
+            }            
+        }
+
+        tbody {
+            td {
+                padding:15px 30px;
+                border-bottom:1px solid #eee;
+                color:#444;
+
+                svg {
+                    color:#00249d;
+                    font-size:20px;
+                }
+
+                img {
+                    width:30px;
+                    border-radius:3px;
+                    vertical-align:middle;
+                    display:inline-block;
+                    margin-right:10px;
+                }
+            }
+
+            tr:last-child{
+                td {
+                    border-bottom:none;
+                }
+            }
+        }
+    }
+}
+
+.card {
+    background:#f8f9fd;
+    border-radius:10px;
+    border:none;
+    overflow:hidden;
+}
+
+.form-control {
+    padding:0;    
+    border:0;    
+    overflow:hidden;
+    background-color:transparent;
+    position:relative;
+
+    input {
+        width:100%;
+        border:none;
+        padding:12px 30px;
+        border-radius:30px;
+        box-shadow:0 10px 50px -25px rgba(0,0,0,0.3);
+
+        &:focus{
+            outline:none;
+            border:none;
+        }
+    }
+
+    button {
+        border-radius: 30px;
+        margin-left: 15px;
+        padding: 12px 30px;
+        line-height: 1;
+        height: 48px;
+        border: none;
+        background:linear-gradient(to right, #00249d, #011a6e, #00249d);
+        background-size:200%;
+        background-position:0%;
+        color:#fff;
+        font-weight:600;
+        transition:all ease .3s;
+
+        &:hover{
+            background-position:100%;
+        }            
+    }
+}
