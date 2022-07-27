@@ -36,9 +36,7 @@ export default function Lista(){
                                             type="text"
                                             value={filtroNome}
                                             placeholder="Filtro por nome"
-                                            onChange={
-                                                (e) => setFiltroNome(e.target.value)
-                                            }
+                                            onChange={(e) => setFiltroNome(e.target.value)}
                                         />
                                         <button type="submit">
                                             Buscar
