@@ -26,8 +26,8 @@ export default function Lista(){
             <div className="container">
                 <div className="row justify-content-center w-100">
                     <div className="col-lg-6 my-5">
-                        <div className="filtro mt-5 mb-5">
-                            <Title text="Busca" />
+                        <div className="filtro mt-5 mb-4">
+                            <Title>Países</Title>
 
                             <div className="form-control">
                                 <form onSubmit={(e) => (e.preventDefault(), setBuscar(filtroNome))}>
@@ -48,8 +48,6 @@ export default function Lista(){
                             </div>
                         </div>
                         <div>
-                            <Title text="Lista" />
-
                             <div className="card">
                                 <table>
                                     {paisesFiltrados.length>0?(
@@ -64,7 +62,10 @@ export default function Lista(){
                                         {paisesFiltrados.length>0?(
                                             paisesFiltrados?.map(pais =>
                                                 <tr key={pais.cca3}>
-                                                    <td>{pais.name.common}</td>
+                                                    <td>
+                                                        <img src={pais.flags.png} />
+                                                        {pais.name.common}
+                                                    </td>
                                                     <td className="text-center nowrap" width={1}>
                                                         <Link to={'/admin/'+pais.cca3}>
                                                             <TbEdit title="Editar" />
