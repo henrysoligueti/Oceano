@@ -32,12 +32,14 @@ export default function Lista(){
                             <div className="form-control">
                                 <form onSubmit={(e) => (e.preventDefault(), setBuscar(filtroNome))}>
                                     <div className="d-flex">
-                                        <input
-                                            type="text"
-                                            value={filtroNome}
-                                            placeholder="Filtro por nome"
-                                            onChange={(e) => setFiltroNome(e.target.value)}
-                                        />
+                                        <div className="form-input flex-1">
+                                            <input
+                                                type="text"
+                                                value={filtroNome}
+                                                placeholder="Filtro por nome"
+                                                onChange={(e) => setFiltroNome(e.target.value)}
+                                            />
+                                        </div>
                                         <button type="submit">
                                             Buscar
                                         </button>
@@ -65,7 +67,7 @@ export default function Lista(){
                                                         {pais.name.common}
                                                     </td>
                                                     <td className="text-center nowrap" width={1}>
-                                                        <Link href="/admin">
+                                                        <Link href={'/admin/'+pais.cca3.toLowerCase()}>
                                                             <a><TbEdit title="Editar" /></a>
                                                         </Link>
                                                     </td>
