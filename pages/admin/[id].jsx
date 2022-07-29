@@ -32,7 +32,7 @@ export default function Lista(){
 
                             <div className="form-control">
                                 <form onSubmit={(e) => (e.preventDefault(), setBuscar(filtroNome))}>
-                                    <div class="form-input">
+                                    <div class="form-input mb-4">
                                         <label for="nome">Nome</label>
                                         <input
                                             type="text"
@@ -43,7 +43,7 @@ export default function Lista(){
                                         />
                                     </div>
 
-                                    <div class="form-input">
+                                    <div class="form-input mb-4">
                                         <label for="continente">Continente</label>
                                         <input
                                             type="text"
@@ -54,7 +54,7 @@ export default function Lista(){
                                         />
                                     </div>
 
-                                    <div class="form-input">
+                                    <div class="form-input mb-4">
                                         <label for="regiao">Região</label>
                                         <input
                                             type="text"
@@ -65,7 +65,7 @@ export default function Lista(){
                                         />
                                     </div>
 
-                                    <div class="form-input">
+                                    <div class="form-input mb-4">
                                         <label for="populacao">População</label>
                                         <input
                                             type="text"
@@ -77,7 +77,7 @@ export default function Lista(){
                                     </div>
 
                                     <div className="row mt-4">
-                                        <div className="col-lg-6">
+                                        <div className="col-lg-6 mb-4">
                                             <Link href="/">
                                                 <a>
                                                     <button className="w-100 mx-0 bg-secondary">
